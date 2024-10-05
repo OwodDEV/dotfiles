@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- lsp
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition({timeout = 1000})<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 
 -- toggleterm
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
