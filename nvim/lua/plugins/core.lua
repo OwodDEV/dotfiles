@@ -118,6 +118,42 @@ require("lazy").setup({
 				require("dapui").setup()
 			end
 		},
+
+		-- gp (ai tool)
+		{
+			"robitx/gp.nvim",
+			config = function()
+				require("plugins.gp").setup()
+			end
+		},
+
+		-- treesitter (code highlighting)
+		{
+			"nvim-treesitter/nvim-treesitter",
+			build = ":TSUpdate",
+			config = function () 
+			local configs = require("nvim-treesitter.configs")
+      		configs.setup({
+				ensure_installed = { "markdown", "markdown_inline", "go", "javascript", "lua" },
+          		sync_install = false,
+          		highlight = { enable = true },
+          		indent = { enable = true },  
+        	})
+    		end
+		},
+
+		-- headers (markdown style)
+		{
+			"lukas-reineke/headlines.nvim",
+			dependencies = {
+				"nvim-treesitter/nvim-treesitter",
+			},
+            config = function()
+                 require("plugins.headlines").setup()
+            end
+		},
+
+
 	}
 })
 

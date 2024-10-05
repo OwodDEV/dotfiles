@@ -29,3 +29,22 @@ vim.api.nvim_set_keymap('n', '<leader>di', '<Cmd>lua require("dap").step_over()<
 vim.api.nvim_set_keymap('n', '<leader>ds', '<Cmd>lua require("dap").step_into()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>do', '<Cmd>lua require("dap").step_out()<CR>', { noremap = true, silent = true })
 
+-- gp
+vim.api.nvim_set_keymap('n', '<C-a>', '<Cmd>GpChatToggle vsplit<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-a>', '<Cmd>GpChatToggle vsplit<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-a>', '<Cmd>GpChatToggle vsplit<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>ap', ":GpChatPaste<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>ap', ":'<,'>GpChatPaste<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>af', ":GpChatFinder<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>ar', ":'<Cmd>GpRewrite<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>ar', ":'<,'>GpRewrite<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>aa', ":'<Cmd>GpAppend<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>aa', ":'<,'>GpAppend<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ab', ":'<Cmd>GpPrepend<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>ab', ":'<,'>GpPrepend<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ai', ":'<Cmd>GpImplement<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>ai', ":'<,'>GpImplement<CR>", { noremap = true, silent = true })
+
