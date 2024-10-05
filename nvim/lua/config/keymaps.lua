@@ -1,6 +1,16 @@
 -- leader
 vim.g.mapleader = ' '
 
+-- nav
+vim.api.nvim_set_keymap('n', '<C-l>', '20zl', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-l>', '20zl', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>', '20zh', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-h>', '20zh', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '20j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-j>', '20j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '20k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-k>', '20k', { noremap = true, silent = true })
+
 -- telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
