@@ -4,6 +4,9 @@ function M.setup()
 	require("gp").setup({
 
 		chat_shortcut_respond = { modes = { "n" }, shortcut = "<CR>" },
+		chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>ad" },
+		chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>as" },
+		chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>an" },
 
 		chat_user_prefix = "## PROMPT",
 		chat_assistant_prefix = { "### AI" },	
