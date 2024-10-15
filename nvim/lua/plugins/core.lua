@@ -134,7 +134,7 @@ require("lazy").setup({
 			config = function () 
 			local configs = require("nvim-treesitter.configs")
       		configs.setup({
-				ensure_installed = { "markdown", "markdown_inline", "go", "javascript", "lua" },
+				ensure_installed = { "markdown", "markdown_inline", "go", "javascript", "html", "css", "lua" },
           		sync_install = false,
           		highlight = { enable = true },
           		indent = { enable = true },  
