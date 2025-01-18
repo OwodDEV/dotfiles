@@ -153,6 +153,18 @@ require("lazy").setup({
             end
 		},
 
+		-- dadbod (db client)
+		{
+			"kristijanhusak/vim-dadbod-ui",
+			dependencies = {
+				{ 'tpope/vim-dadbod', lazy = true },
+      			{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql' }, lazy = true },
+    		},
+			init = function()
+				require("plugins.dadbod").setup()
+			end,
+
+		}
 
 	}
 })

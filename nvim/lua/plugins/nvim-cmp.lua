@@ -50,11 +50,16 @@ function M.setup()
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" }, -- For luasnip users.
-		}, {
+		},
+		{
 			{ name = "buffer" },
 			{ name = "path" },
-		}, {
+		},
+		{
 			{ name = "neorg" },
+		},
+		{
+			{ name = "vim-dadbod-completion" },
 		}),
 
 		formatting = {
