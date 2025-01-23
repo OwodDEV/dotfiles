@@ -137,7 +137,10 @@ require("lazy").setup({
 				ensure_installed = { "markdown", "markdown_inline", "go", "javascript", "html", "css", "lua" },
           		sync_install = false,
           		highlight = { enable = true },
-          		indent = { enable = true },  
+          		indent = { 
+					enable = true,
+					disable = { "css" },
+				},  
         	})
     		end
 		},

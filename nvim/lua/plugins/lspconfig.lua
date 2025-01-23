@@ -10,6 +10,15 @@ function M.setup()
 	end
 
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	local capabilities_cssls = vim.lsp.protocol.make_client_capabilities()
+	capabilities_cssls.textDocument.completion.completionItem.snippetSupport = true
+	capabilities_cssls.textDocument.completion.completionItem.resolveSupport = {
+		properties = {
+			"documentation",
+			"detail",
+			"additionalTextEdits",
+		},
+	}
 
 	lspconfig.gopls.setup {
 		on_attach = on_attach,
@@ -27,6 +36,41 @@ function M.setup()
 			},
 		},
 	}
+
+	lspconfig.html.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+
+	lspconfig.cssls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities_cssls,
+	})
+
+	lspconfig.jsonls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+
+	lspconfig.ts_ls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		cmd = { "typescript-language-server", "--stdio" },
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"javascript.jsx",
+			"typescript",
+			"typescriptreact",
+			"typescript.tsx",
+		},
+		init_options = {
+			hostInfo = "neovim",
+		},
+		-- root_dir = util.root_pattern("package.json", "package-lock.json", "tsconfig.json", "jsconfig.json", ".git"),
+		root_dir = util.find_node_modules_ancestor,
+		single_file_support = true,
+	})
 
 	-- gofmt
 	vim.api.nvim_create_autocmd("BufWritePre", {
